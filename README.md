@@ -15,11 +15,4 @@ This is a simple web application built with **Flask** that displays a new random
 
 ## 📁 Project Structure
 
-quote-generator/ 
-├── templates/ 
-    │ └── index.html
-├── app.py 
-├── requirements.txt 
-├── vercel.json 
-├── README.md 
- └── static/ └── style.css
+
