@@ -5,11 +5,13 @@ app = Flask(__name__)
 
 # List of quotes
 quotes = [
-    "The best way to predict the future is to create it. – Peter Drucker",
-    "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
-    "You only live once, but if you do it right, once is enough. – Mae West",
-    "Do what you can, with what you have, where you are. – Theodore Roosevelt",
-    "In the middle of every difficulty lies opportunity. – Albert Einstein"
+    "Long drive without any destination.",
+    "To the mountains and never back.",
+    "You only live once, but if you do it right, once is enough.",
+    "Do what you can, with what you have, where you are.",
+    "In the middle of every difficulty lies opportunity.",
+    "Life is too short bro. Pack your bags and explore!!",
+    "Somewhere between the dream and destination."
 ]
 
 @app.route("/")
