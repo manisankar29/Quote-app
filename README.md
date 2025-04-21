@@ -2,15 +2,6 @@
 
 This is a simple web application built with **Flask** that displays a new random quote every time the page is refreshed. The project was created to learn the basics of Flask and web deployment.
 
-## Table of Contents
-
-- [Live Demo](#live-demo)
-- [Feature](#features)
-- [Project Structure](#project-structure)
-- [Learning Goals](#learning-goals)
-- [Tech Stack](#tech-stack)
-- [Future Enhancements](#future-enhancements)
-
 ## 🌐 Live Demo
 
 🔗 [Visit the Website on Vercel](https://quote-app-sepia.vercel.app/)  
