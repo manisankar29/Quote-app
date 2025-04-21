@@ -1,31 +1,152 @@
-body {
-    font-family: Arial, sans-serif;
+/* Base styles and reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    color: #fff;
+    transition: all 0.5s ease;
 }
 
+/* Container for the quote */
 .container {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #6c63ff;
-    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 60%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading styles */
 h1 {
-    color: #6c63ff;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: -10px;
+    width: 50%;
+    height: 3px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.container:hover h1::after {
+    transform: scaleX(1);
+}
+
+/* Quote box styling */
+.quote-box {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.quote-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 8rem;
+    opacity: 0.2;
+    color: #fff;
+    font-family: Georgia, serif;
+    transition: all 0.5s ease;
+}
+
+.quote-box:hover::before {
+    transform: translateY(10px) rotate(-10deg);
+    opacity: 0.3;
+}
+
+.quote-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .quote-box p {
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode detection - changes color scheme automatically */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(45deg, #2c3e50, #4a235a);
+        background-size: 400% 400%;
+    }
+    
+    .container {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Optional additions for more dynamic behavior */
+/* This will make the quote appear with a fade-in effect when page loads */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .quote-box {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #333333;
+    animation: fadeIn 1s ease-out forwards;
 }
